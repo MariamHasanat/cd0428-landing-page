@@ -14,29 +14,29 @@
 */
 
 /**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
-*/
-
-/**
  * Define Global Variables
  * 
 */
-
 const navbarList = document.getElementById("navbar__list");
 const sections = document.querySelectorAll("section");
-
 
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
+
+/**
+ * Helper function to determine if a section is in the viewport
+ */
 const isInViewport = (section) => {
     const box = section.getBoundingClientRect();
     return box.top <= 150 && box.bottom >= 150;
 };
 
+/**
+ * Helper function to remove 'active' classes
+ */
 const removeActiveClasses = () => {
     sections.forEach((section) => section.classList.remove("your-active-class"));
     const navLinks = document.querySelectorAll(".menu__link");
@@ -44,26 +44,8 @@ const removeActiveClasses = () => {
 };
 
 /**
- * End Helper Functions
- * Begin Main Functions
- *
-*/
-
-// build the nav
-
-
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- *
-*/
-
+ * Build the navigation menu dynamically
+ */
 const buildNav = () => {
     sections.forEach((section) => {
         const navItem = document.createElement("li");
@@ -84,8 +66,9 @@ const buildNav = () => {
     });
 };
 
-// Scroll to section on link click
-
+/**
+ * Add class 'active' to section and nav item when in the viewport
+ */
 const setActiveSection = () => {
     sections.forEach((section) => {
         const navLink = document.querySelector(`a[href="#${section.id}"]`);
@@ -97,8 +80,17 @@ const setActiveSection = () => {
     });
 };
 
+/**
+ * End Main Functions
+ * Begin Events
+ *
+*/
+
 // Build menu
 document.addEventListener("DOMContentLoaded", buildNav);
+
+// Scroll to section on link click
+// (handled within the buildNav function for smooth scrolling)
 
 // Set sections as active
 document.addEventListener("scroll", setActiveSection);
