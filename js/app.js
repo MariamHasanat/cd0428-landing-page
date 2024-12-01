@@ -32,13 +32,14 @@ const sections = document.querySelectorAll("section");
  * Start Helper Functions
  * 
 */
-
-
-
+const isInViewport = (section) => {
+    const box = section.getBoundingClientRect();
+    return box.top <= 150 && box.bottom >= 150;
+};
 /**
  * End Helper Functions
  * Begin Main Functions
- * 
+ *
 */
 
 // build the nav
@@ -53,10 +54,10 @@ const sections = document.querySelectorAll("section");
 /**
  * End Main Functions
  * Begin Events
- * 
+ *
 */
 
-// Build menu 
+// Build menu
 
 // Scroll to section on link click
 
