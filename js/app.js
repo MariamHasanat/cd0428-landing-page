@@ -64,7 +64,6 @@ const removeActiveClasses = () => {
  *
 */
 
-// Build menu
 const buildNav = () => {
     sections.forEach((section) => {
         const navItem = document.createElement("li");
@@ -100,5 +99,8 @@ const setActiveSection = () => {
         }
     });
 };
+
+// Build menu
+document.addEventListener("DOMContentLoaded", buildNav);
 
 
