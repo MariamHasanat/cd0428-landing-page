@@ -86,9 +86,6 @@ const buildNav = () => {
 
 // Scroll to section on link click
 
-// Set sections as active
-
-
 const setActiveSection = () => {
     sections.forEach((section) => {
         const navLink = document.querySelector(`a[href="#${section.id}"]`);
@@ -103,4 +100,5 @@ const setActiveSection = () => {
 // Build menu
 document.addEventListener("DOMContentLoaded", buildNav);
 
-
+// Set sections as active
+document.addEventListener("scroll", setActiveSection);
