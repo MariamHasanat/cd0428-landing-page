@@ -65,6 +65,25 @@ const removeActiveClasses = () => {
 */
 
 // Build menu
+const buildNav = () => {
+    sections.forEach((section) => {
+        const navItem = document.createElement("li");
+        const anchor = document.createElement("a");
+
+        anchor.textContent = section.dataset.nav;
+        anchor.href = `#${section.id}`;
+        anchor.classList.add("menu__link");
+
+        navItem.appendChild(anchor);
+        navbarList.appendChild(navItem);
+
+        // Add smooth scroll behavior
+        anchor.addEventListener("click", (event) => {
+            event.preventDefault();
+            section.scrollIntoView({ behavior: "smooth" });
+        });
+    });
+};
 
 // Scroll to section on link click
 
