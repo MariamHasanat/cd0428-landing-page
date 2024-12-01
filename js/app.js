@@ -36,6 +36,13 @@ const isInViewport = (section) => {
     const box = section.getBoundingClientRect();
     return box.top <= 150 && box.bottom >= 150;
 };
+
+const removeActiveClasses = () => {
+    sections.forEach((section) => section.classList.remove("your-active-class"));
+    const navLinks = document.querySelectorAll(".menu__link");
+    navLinks.forEach((link) => link.classList.remove("active"));
+};
+
 /**
  * End Helper Functions
  * Begin Main Functions
