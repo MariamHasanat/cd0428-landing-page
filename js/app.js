@@ -90,3 +90,15 @@ const buildNav = () => {
 // Set sections as active
 
 
+const setActiveSection = () => {
+    sections.forEach((section) => {
+        const navLink = document.querySelector(`a[href="#${section.id}"]`);
+        if (isInViewport(section)) {
+            removeActiveClasses();
+            section.classList.add("your-active-class");
+            navLink.classList.add("active");
+        }
+    });
+};
+
+
