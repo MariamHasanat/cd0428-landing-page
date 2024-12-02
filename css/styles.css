@@ -74,7 +74,8 @@ section {
     display: inline-block;
 }
 
-.navbar__menu .menu__link {
+/* .navbar__menu  */
+.menu__link {
     display: block;
     padding: 1em;
     font-weight: bold;
@@ -86,6 +87,13 @@ section {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
+}
+
+/* Highlighted navigation link */
+.active-link {
+    color: #000; 
+    font-weight: bolder;
+    font-size: larger;
 }
 
 /* Header Styles */
